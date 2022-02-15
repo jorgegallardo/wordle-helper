@@ -1,17 +1,21 @@
 import { useState } from 'react';
 import { sortedUniqueWords } from './words';
+import { filterRemainingWords } from './filter.js';
 
 const App = () => {
-  const [remainingWords, setRemainingWords] = useState(sortedUniqueWords);
   const [firstWord, setFirstWord] = useState('');
-  const [secondWord, setSecondWord] = useState('');
-  const [thirdWord, setThirdWord] = useState('');
-  const [fourthWord, setFourthWord] = useState('');
-  const [fifthWord, setFifthWord] = useState('');
+  // const [secondWord, setSecondWord] = useState('');
+  // const [thirdWord, setThirdWord] = useState('');
+  // const [fourthWord, setFourthWord] = useState('');
+  // const [fifthWord, setFifthWord] = useState('');
 
-  const filterRemainingWords = (event) => {
+  const updateFirstWord = (event) => {
     setFirstWord(event.target.value);
   };
+
+  const filteredWords = filterRemainingWords(sortedUniqueWords, firstWord);
+  let remainingWords = sortedUniqueWords;
+  if (filteredWords) remainingWords = filteredWords;
 
   return (
     <>
@@ -21,7 +25,7 @@ const App = () => {
         type="text"
         placeholder="word 1"
         maxLength={5}
-        onChange={filterRemainingWords}
+        onChange={updateFirstWord}
         value={firstWord}
       ></input>
       {/* <input type="text" placeholder="word 2" maxLength={5}></input>
@@ -29,13 +33,10 @@ const App = () => {
       <input type="text" placeholder="word 4" maxLength={5}></input>
       <input type="text" placeholder="word 5" maxLength={5}></input> */}
 
-      <h3>
-        Remaining Words:{' '}
-        {remainingWords.filter((word) => word.includes(firstWord)).length}
-      </h3>
+      <h3>Remaining Words: {remainingWords ? remainingWords.length : '0'}</h3>
       <ol>
         {remainingWords
-          .filter((word) => word.includes(firstWord))
+          // .filter((word) => word.includes(firstWord))
           .map((word, index) => (
             <li key={index}>{word}</li>
           ))}

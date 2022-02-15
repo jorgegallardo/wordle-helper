@@ -1,77 +1,75 @@
-export const filterRemainingWords = (allWords, testWord) => {
-  //let testWord = 'wontsdazedbulgychimp';
-
+export const filterRemainingWords = (allWords, enteredLetters) => {
   let candidates = [];
 
   for (const i in allWords) {
     const currentWord = allWords[i];
 
-    if (testWord.length === 5) {
+    if (enteredLetters.length === 5) {
       if (
-        !currentWord.includes(testWord[0]) &&
-        !currentWord.includes(testWord[1]) &&
-        !currentWord.includes(testWord[2]) &&
-        !currentWord.includes(testWord[3]) &&
-        !currentWord.includes(testWord[4])
+        !currentWord.includes(enteredLetters[0]) &&
+        !currentWord.includes(enteredLetters[1]) &&
+        !currentWord.includes(enteredLetters[2]) &&
+        !currentWord.includes(enteredLetters[3]) &&
+        !currentWord.includes(enteredLetters[4])
       )
         candidates.push(allWords[i]);
-    } else if (testWord.length === 10) {
+    } else if (enteredLetters.length === 10) {
       if (
-        !currentWord.includes(testWord[0]) &&
-        !currentWord.includes(testWord[1]) &&
-        !currentWord.includes(testWord[2]) &&
-        !currentWord.includes(testWord[3]) &&
-        !currentWord.includes(testWord[4]) &&
-        !currentWord.includes(testWord[5]) &&
-        !currentWord.includes(testWord[6]) &&
-        !currentWord.includes(testWord[7]) &&
-        !currentWord.includes(testWord[8]) &&
-        !currentWord.includes(testWord[9])
+        !currentWord.includes(enteredLetters[0]) &&
+        !currentWord.includes(enteredLetters[1]) &&
+        !currentWord.includes(enteredLetters[2]) &&
+        !currentWord.includes(enteredLetters[3]) &&
+        !currentWord.includes(enteredLetters[4]) &&
+        !currentWord.includes(enteredLetters[5]) &&
+        !currentWord.includes(enteredLetters[6]) &&
+        !currentWord.includes(enteredLetters[7]) &&
+        !currentWord.includes(enteredLetters[8]) &&
+        !currentWord.includes(enteredLetters[9])
       ) {
         candidates.push(allWords[i]);
       }
-    } else if (testWord.length === 15) {
+    } else if (enteredLetters.length === 15) {
       if (
-        !currentWord.includes(testWord[0]) &&
-        !currentWord.includes(testWord[1]) &&
-        !currentWord.includes(testWord[2]) &&
-        !currentWord.includes(testWord[3]) &&
-        !currentWord.includes(testWord[4]) &&
-        !currentWord.includes(testWord[5]) &&
-        !currentWord.includes(testWord[6]) &&
-        !currentWord.includes(testWord[7]) &&
-        !currentWord.includes(testWord[8]) &&
-        !currentWord.includes(testWord[9]) &&
-        !currentWord.includes(testWord[10]) &&
-        !currentWord.includes(testWord[11]) &&
-        !currentWord.includes(testWord[12]) &&
-        !currentWord.includes(testWord[13]) &&
-        !currentWord.includes(testWord[14])
+        !currentWord.includes(enteredLetters[0]) &&
+        !currentWord.includes(enteredLetters[1]) &&
+        !currentWord.includes(enteredLetters[2]) &&
+        !currentWord.includes(enteredLetters[3]) &&
+        !currentWord.includes(enteredLetters[4]) &&
+        !currentWord.includes(enteredLetters[5]) &&
+        !currentWord.includes(enteredLetters[6]) &&
+        !currentWord.includes(enteredLetters[7]) &&
+        !currentWord.includes(enteredLetters[8]) &&
+        !currentWord.includes(enteredLetters[9]) &&
+        !currentWord.includes(enteredLetters[10]) &&
+        !currentWord.includes(enteredLetters[11]) &&
+        !currentWord.includes(enteredLetters[12]) &&
+        !currentWord.includes(enteredLetters[13]) &&
+        !currentWord.includes(enteredLetters[14])
       ) {
         candidates.push(allWords[i]);
       }
-    } else if (testWord.length === 20) {
+    } else if (enteredLetters.length === 20) {
       if (
-        !currentWord.includes(testWord[0]) &&
-        !currentWord.includes(testWord[1]) &&
-        !currentWord.includes(testWord[2]) &&
-        !currentWord.includes(testWord[3]) &&
-        !currentWord.includes(testWord[4]) &&
-        !currentWord.includes(testWord[5]) &&
-        !currentWord.includes(testWord[6]) &&
-        !currentWord.includes(testWord[7]) &&
-        !currentWord.includes(testWord[8]) &&
-        !currentWord.includes(testWord[9]) &&
-        !currentWord.includes(testWord[10]) &&
-        !currentWord.includes(testWord[11]) &&
-        !currentWord.includes(testWord[12]) &&
-        !currentWord.includes(testWord[13]) &&
-        !currentWord.includes(testWord[14]) &&
-        !currentWord.includes(testWord[15]) &&
-        !currentWord.includes(testWord[16]) &&
-        !currentWord.includes(testWord[17]) &&
-        !currentWord.includes(testWord[18]) &&
-        !currentWord.includes(testWord[19])
+        !currentWord.includes(enteredLetters[0]) &&
+        !currentWord.includes(enteredLetters[1]) &&
+        !currentWord.includes(enteredLetters[2]) &&
+        !currentWord.includes(enteredLetters[3]) &&
+        !currentWord.includes(enteredLetters[4]) &&
+        !currentWord.includes(enteredLetters[5]) &&
+        !currentWord.includes(enteredLetters[6]) &&
+        !currentWord.includes(enteredLetters[7]) &&
+        !currentWord.includes(enteredLetters[8]) &&
+        !currentWord.includes(enteredLetters[9]) &&
+        !currentWord.includes(enteredLetters[10]) &&
+        !currentWord.includes(enteredLetters[11]) &&
+        !currentWord.includes(enteredLetters[12]) &&
+        !currentWord.includes(enteredLetters[13]) &&
+        !currentWord.includes(enteredLetters[14]) &&
+        !currentWord.includes(enteredLetters[15]) &&
+        !currentWord.includes(enteredLetters[16]) &&
+        !currentWord.includes(enteredLetters[17]) &&
+        !currentWord.includes(enteredLetters[18]) &&
+        !currentWord.includes(enteredLetters[19])
       ) {
         candidates.push(allWords[i]);
       }

@@ -4,7 +4,7 @@ import { filterRemainingWords } from './filter.js';
 
 const App = () => {
   const [firstWord, setFirstWord] = useState('');
-  // const [secondWord, setSecondWord] = useState('');
+  const [secondWord, setSecondWord] = useState('');
   // const [thirdWord, setThirdWord] = useState('');
   // const [fourthWord, setFourthWord] = useState('');
   // const [fifthWord, setFifthWord] = useState('');
@@ -12,9 +12,15 @@ const App = () => {
   const updateFirstWord = (event) => {
     setFirstWord(event.target.value);
   };
+  const updateSecondWord = (event) => {
+    setSecondWord(event.target.value);
+  };
 
-  const filteredWords = filterRemainingWords(sortedUniqueWords, firstWord);
   let remainingWords = sortedUniqueWords;
+  const filteredWords = filterRemainingWords(
+    sortedUniqueWords,
+    firstWord + secondWord
+  );
   if (filteredWords) remainingWords = filteredWords;
 
   return (
@@ -27,11 +33,20 @@ const App = () => {
         maxLength={5}
         onChange={updateFirstWord}
         value={firstWord}
-      ></input>
-      {/* <input type="text" placeholder="word 2" maxLength={5}></input>
+      />
+      {
+        <input
+          type="text"
+          placeholder="word 2"
+          maxLength={5}
+          onChange={updateSecondWord}
+          value={secondWord}
+        />
+        /*
       <input type="text" placeholder="word 3" maxLength={5}></input>
       <input type="text" placeholder="word 4" maxLength={5}></input>
-      <input type="text" placeholder="word 5" maxLength={5}></input> */}
+      <input type="text" placeholder="word 5" maxLength={5}></input> */
+      }
 
       <h3>Remaining Words: {remainingWords ? remainingWords.length : '0'}</h3>
       <ol>
